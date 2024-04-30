@@ -144,9 +144,9 @@ class ProfilePictureHandler {
   
         async fetchUserData() {
             try {
-              const userName =JSON.parse( localStorage.getItem("user"))
+              const user =JSON.parse( localStorage.getItem("user"))
               
-              const userId =localStorage.getItem('id');
+              const userId =user.id
                 const response = await fetch(`https://dummyjson.com/users/${userId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
