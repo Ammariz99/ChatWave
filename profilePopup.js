@@ -146,7 +146,7 @@ class ProfilePictureHandler {
             try {
               const user =JSON.parse( localStorage.getItem("user"))
               
-              const userId =user.id
+              const userId = user.id
                 const response = await fetch(`https://dummyjson.com/users/${userId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -159,12 +159,9 @@ class ProfilePictureHandler {
         }
   
         updateProfile(user) {
-          const user =JSON.parse( localStorage.getItem("user"))
-          const userId =user.id
-          const userName =user.username
-          const userImage = user.image
-          this.userProfilePicture.src = userImage;
-            this.userName.textContent = userName;
+          const userName =JSON.parse( localStorage.getItem("user"))
+            this.userProfilePicture.src = userName.image;
+            this.userName.textContent = userName.username;
             
         }
     }
