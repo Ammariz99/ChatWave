@@ -159,9 +159,9 @@ class ProfilePictureHandler {
         }
   
         updateProfile(user) {
-          const userName =JSON.parse( localStorage.getItem("user"))
-            this.userProfilePicture.src = userName.image;
-            this.userName.textContent = userName.username;
+          const user =JSON.parse( localStorage.getItem("user"))
+            this.userProfilePicture.src = user.image;
+            this.userName.textContent = user.username;
             
         }
     }
