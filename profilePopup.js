@@ -160,7 +160,10 @@ class ProfilePictureHandler {
   
         updateProfile(user) {
           const user =JSON.parse( localStorage.getItem("user"))
-            this.userProfilePicture.src = user.image;
+          const userId =user.id
+          const userName =user.username
+          const userImage = user.image
+          this.userProfilePicture.src = user.image;
             this.userName.textContent = user.username;
             
         }
