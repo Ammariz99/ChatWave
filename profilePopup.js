@@ -31,7 +31,7 @@ class ProfilePictureHandler {
     }
   
     updateProfilePopup(user) {
-      const userName =JSON.parse( localStorage.getItem("user"))
+      const userName =JSON.parse( localStorage.getItem("user"));
       const profilePopup = document.querySelector(".profile-popup");
       const profileName = profilePopup.querySelector("h1");
       const profileUsername = profilePopup.querySelector("p");
