@@ -163,8 +163,8 @@ class ProfilePictureHandler {
           const userId =user.id
           const userName =user.username
           const userImage = user.image
-          this.userProfilePicture.src = user.image;
-            this.userName.textContent = user.username;
+          this.userProfilePicture.src = userImage;
+            this.userName.textContent = userName;
             
         }
     }
