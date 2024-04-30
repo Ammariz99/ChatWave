@@ -17,6 +17,7 @@ class ProfilePictureHandler {
   
     async handleProfilePictureClick(event) {
       try {
+        const userName =JSON.parse( localStorage.getItem("user"))
         const userId =localStorage.getItem('id');
         const response = await fetch(`https://dummyjson.com/users/${userId}`);
         if (!response.ok) {
