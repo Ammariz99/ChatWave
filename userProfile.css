@@ -1,0 +1,81 @@
+body {
+    --background-color-light: #fff; /* Light mode background color */
+    --text-color-light: #333; /* Light mode text color */
+    
+    --background-color-dark: #333; /* Dark mode background color */
+    --text-color-dark: #fff; /* Dark mode text color */
+    
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+
+  body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-light);
+  }
+
+
+.main-timeline-content{
+max-height: calc(192vh - 242px);
+}
+.main-timeline-content::-webkit-scrollbar {
+    display: none; 
+  }
+
+  
+@keyframes slideUp {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 6s ease-out forwards;
+  }
+  
+/*==========Media Query For 992Px==================*/
+
+  @media (max-width:992px){
+ nav .container .logo{
+  align-items: center;
+  margin-left: 40%;
+ }
+ nav .container .search-bar{
+  display: none;
+ }
+    .intro-card{
+      display: none;
+  }
+
+  .friends-card{
+    display: none;
+  }
+
+  .profile-image-card{
+    display: none;
+  }
+
+  .main-timeline-content{
+    width: 20%;
+    align-items: center !important;
+    margin-right: 30%;
+  }
+    
+  }

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script> 
+        <link rel="stylesheet" href="loader.css">
+        <link rel="stylesheet" href="style.css">
+                
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        
+
+        <link rel="icon" href="assets/logo-picture01.PNG" type="" class=" rounded-full">
+        <title>ChatWave</title>
+    </head>
+
+<body>
+    <div class="loader" id="loader"></div>
+    <div id="content" class="hidden"">
+        
+        
+        <!--==================================Navbar Design Start=============================-->
+        
+        <nav class="bg-white w-full fixed top-0 z-10 py-2">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="logo" id="logo">
+                    <a href="main.html">
+                        <h3 class="text-2xl font-semibold uppercase">Chat <span class="text-red-500">Wave</span></h3>
+                    </a>
+                </div>
+
+
+                <div class="search-bar flex items-center bg-slate-300 h-12 rounded-full px-4">
+                    <i class="fas fa-search text-gray-600"></i>
+                    <input type="search" id="searchInput" placeholder="Search ChatWave" class="ml-4 w-80 text-sm text-dark placeholder-slate-500 focus:outline-none bg-transparent">   
+                </div>
+                
+                <div class="add-post flex items-center gap-4">
+                    <label for="add-post" class="btn btn-primary mini-button">Add Post</label>
+                    <div class="profile-picture relative w-12 h-12 overflow-hidden rounded-full cursor-pointer object-cover" id="my-profile-picture">
+                        <!--Image will dynamicallly upload using fetch api-->
+                        <img  alt="Profile Picture" class="w-full h-full object-cover">
+                        <!--Image will dynamicallly upload using fetch api-->   
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--==================================Navbar Design End=============================-->
+        
+
+
+
+        <!--===========================Main Design Start==================-->
+<main class="relative top-72">
+    <div class="container mx-auto main-container grid grid-cols-[18vw,auto,20vw] relative mb-2">
+                <!--======================Main Left Design Start===================-->
+                <div class="main-left-side sticky top-18 h-max-content " >
+
+                    <!--======Profile Start===========-->
+
+                    <a  class="profile flex items-center mt-[-13rem]  bg-white p-4 rounded-xl gap-4 ">
+                        <div class="profile-picture cursor-pointer  " id="my-profile-picture">
+                            <!--Image will dynamicallly upload using fetch api-->
+                            <img id="user-profile-picture" alt="Picture">
+                            <!--Image will dynamicallly upload using fetch api-->
+                        </div>
+                    
+                        <div class="profile-handle" id="profile-handle">
+                            <h4 class="text-lg font-semibold" id="user-name">Loading...</h4>
+                        </div>
+                    </a>
+                    
+                    <!--======Profile End===========-->
+
+                    <!--==================Sidebar Design Start====================-->
+
+                    <aside class="sidebar mt-4 rounded card-border-radius">
+
+                        <a  class=" menu-item active flex items-center bg-gray p-4 rounded ">
+                            <span class="icon1 mr-2"><img src="assets/home1.svg" alt="Home Icon" ></span>
+                            <h3 class="text-base font-semibold">Home</h3>
+                        </a>
+                    
+                        
+                        <a class="menu-item flex items-center hover:bg-gray-300 h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white" id="message-menu">
+                            <span class="icon1 ml-5"> <img src="assets/message.svg" ></span>
+                            <small class="notify-counter bg-red-500 text-white rounded-full px-2 py-1 h-6 w-6 text-xs font-semibold absolute top-1 left-8" id="notify-counter1">3+</small>
+                            <h3 class="text-base font-semibold ml-4">Contacts</h3>
+                        </a>
+
+                        <a class="menu-item flex items-center hover:bg-gray-300  h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white " id="notification-bar">
+                            <span class="flex items-center mr-2">
+                                <img src="assets/notification.svg" alt="Notification Icon" class="icon1 ml-5"></span>
+                                <small class="notify-counter bg-red-500 text-white rounded-full px-2 py-1 text-xs h-6 w-6 font-semibold absolute top-2 left-8" id="notify-counter2">9+</small>
+                                <h3 class="text-base font-semibold ml-4">Notifications</h3>
+                            
+                         <!--Notification Bar-->
+                                                
+                            <div class="notification-box hidden  absolute top-0 left-110 w-80 ms-72 bg-white rounded-xl p-4 shadow-lg shadow-violet-700 z-[9]">
+                                <div>
+                                    <div class="profile-picture">
+                                        <img src="assets/notification1.jpg" alt="">
+                                    </div>
+
+                                    <div class="notification-body">
+                                        <b>Alexendar</b>is your new connection</b>
+                                            <small class="text-gray">1 Day Ago</small>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="profile-picture">
+                                        <img src="assets/notification2.jpg" alt="">
+                                    </div>
+                                                
+                                    <div class="notification-body">
+                                        <b>Phillips</b>Commented on your post</b>
+                                            <small class="text-gray">15 Minutes Ago</small>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <div class="profile-picture">
+                                        <img src="assets/notification3.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="notification-body">
+                                        <b>Emilia</b>Liked your post</b>
+                                        <small class="text-gray">2 Day Ago</small>
+                                    </div>
+                                </div>
+                                               
+                                <div>
+                                    <div class="profile-picture">
+                                        <img src="assets/notification4.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="notification-body">
+                                        <b>Fahad</b>is your new connection</b>
+                                        <small class="text-gray">5 Day Ago</small>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="profile-picture">
+                                        <img src="assets/notification5.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="notification-body">
+                                        <b>Danny</b>is in Paris</b>
+                                        <small class="text-gray">1 Day Ago</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    
+
+                        
+                        <a class="menu-item flex items-center hover:bg-gray-300 h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white">
+                            <span class="icon1 ml-5"> <img src="assets/bookmark.svg" ></span >
+                            <h3 class="text-base font-semibold ml-3">Saved</h3>
+                        </a>
+                                    
+                        
+                        <a class="menu-item flex items-center hover:bg-gray-300 h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white">
+                            <span class="icon1 ml-5"> <img src="assets/newsfeed.svg"></span>
+                            <h3 class="text-base font-semibold ml-3">Feeds</h3>
+                        </a>
+
+                        
+                        <a class="menu-item flex items-center hover:bg-gray-300 h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white" id="theme">
+                            <span class="icon1 ml-5"> <img src="assets/theme.svg"></span>
+                            <h3 class="text-base font-semibold ml-3">Theme</h3>
+                        </a>
+            
+
+                        <a class="menu-item flex items-center hover:bg-gray-300 h-14 relative cursor-pointer transition duration-300 ease-in-out bg-white">
+                            <span class="icon1 ml-5"> <img src="assets/settings.svg" ></span>
+                            <h3 class="text-base font-semibold ml-3">Settings</h3>
+                        </a>
+                                
+                                
+                        <!--Add Post Btn-->
+
+                        <label for="add-post" id="create-post" class="btn btn-primary btn-lg block w-full py-4 text-center mt-2">Create Post</label>
+
+                                
+                    </aside>
+                    <!--==================Sidebar Design End====================-->
+                </div>
+                <!--======================Main Left Design End===================-->
+
+                <!--================Main Mid Design=============-->
+
+
+
+                <div class="main-mid-side">
+                    <div class="mid-container ">
+
+
+                        <!--=======Stories Start=======-->
+                    <div class="stories mt-[-13rem] ">
+                        
+                        <div class="stories-wrapper swiper mySwiper  flex gap-2 h-48">
+                            <div class="swiper-wrapper">
+                                
+                                <div class="story swiper-slide  w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" id="profile-picture-story">
+                                        <!--Image will dynamicallly upload using fetch api-->
+                                        <img  alt="" srcset="">
+                                        <!--Image will dynamicallly upload using fetch api-->
+                                    </div>
+                                    <label for="add-story" class="add-story flex flex-col items-center justify-center text-center w-full h-full absolute top-0 ">
+                                        <i class="fa-solid fa-plus block mb-8 text-2xl text-white" id="upload"></i>
+                                    <p>Create Story</p>
+                                    </label>
+                                    <input type="file" accept="image/jpg, image/png, image/jpeg" id="add-story" class="hidden" >
+                                </div>
+        
+                                <div class="story swiper-slide  w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story1.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s1.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>CollingWood</p>
+                                </div>
+        
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story2.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s2.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Stokes</p>
+                                </div>
+        
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story3.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s3.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Zain</p>
+                                </div>
+        
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story4.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s4.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Lewis</p>
+                                </div>
+        
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story5.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s5.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Marina</p>
+                                </div>
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story5.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s5.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Marina</p>
+                                </div>
+    
+                                <div class="story swiper-slide w-full h-full relative rounded-xl overflow-hidden">
+                                    <img class="w-full h-full object-cover" src="assets/story5.jpg" alt="" srcset="">
+                                    <div class="profile-picture absolute top-1 left-1 w-6 border-2 border-dashed border-primary z-10" >
+                                        <img src="assets/s5.jpg" alt="" srcset="">
+                                    </div>
+                                    <p>Marina</p>
+                                </div>
+        
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <!--=======End Stories=======-->
+
+
+
+                        <!--=======Posts=======-->
+                        <form class="add-post input-post flex flex-col  justify-between items-center p-1 rounded-xl bg-white mt-4">
+                            <div class="flex w-full">
+                                
+                                <div class="profile-picture ml-3 mt-3 " id="profile-picture-container">
+                                    <!--Image will dynamicallly upload using fetch api-->
+                                    <img  alt="" srcset="">
+                                    <!--Image will dynamicallly upload using fetch api-->
+                                </div>
+                                
+                                <input type="text" class="w-full pl-4 bg-transparent text-dark focus:outline-none" placeholder="What's Happening? " id="add-post">
+                                <input type="submit" value="Post" class="btn btn-primary mr-3 mt-3">
+                            </div>
+                            <div class="color-emoji flex w-full mt-3 justify-around whitespace-nowrap">
+                                <div class="text-3xl flex justify-center items-center w-[30%] hover:bg-slate-400 rounded-xl  whitespace-nowrap" >
+                                    <span class="text-base" ><i class="fa-solid fa-video"></i><b> Live Video</b></span>
+                                </div>
+                                <div class="text-3xl flex justify-center items-center  hover:bg-slate-400 rounded-xl w-[30%] ">
+                                    <span class="text-base" ><i class="fa-regular fa-image"></i><b> Photo/Video</b></span>
+                                </div>
+                                <div class="text-3xl flex justify-center items-center   hover:bg-slate-400 w-[30%] rounded-xl ">
+                                    <span class="text-base" >&#128512;  <b> Feeling/Activity</b></span>
+                                </div>
+                            </div>
+                        </form>
+                        
+
+                        <!--===NewsFeed Start====-->
+                        <div class="news-feed"> 
+                            <!--Dynamic Card load here for posts-->      
+                        </div>
+                        <!--===NewsFeed End====-->
+
+                    </div>
+                    </div>
+                        <!---======Main-Mid-Side End==========-->
+
+
+
+
+                <!--Main right Design-->
+                <div class="main-right-side h-max  sticky -top-72 bottom-0">
+                    <!--==========================Start Contact=======================-->
+                    <div class="contacts bg-white rounded-2xl p-4 mt-[-13rem]" id="contacts-container">
+
+                        <!--Contacts Top-->
+                        <div class="contact-top flex items-center mb-4">
+                            <h4 class="text-2xl font-bold">Chats</h4>
+                                <div class=" items-center ml-24 space-x-4 whitespace-nowrap text-lg">
+                                    <i class="fa-solid fa-ellipsis   "></i>
+                                    <i class="fa-solid fa-maximize "></i>
+                                    <i class="fa-solid fa-pen-to-square  "></i>
+                                </div>
+                        </div>
+
+                        <!--Search Bar-->
+                        <div class="contact-search-bar flex bg-slate-300 rounded-2xl p-3 gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" class="bg-transparent text-sm" placeholder="Search Contact" id="contact-search">
+                        </div>
+
+                        <!--Contact Categories-->
+                        <div class="contact-categories flex mb-4 mt-4 justify-between items-center">
+                            <h6 class="active font-bold w-full text-sm pb-2 border-b-4 border-solid border-purple-500 bg-light items-center ">Inbox</h6>
+                            <h6 class="font-bold w-full text-sm pb-2 border-b-4 border-solid bg-light items-center ">General</h6>
+                            <h6 class="contact-request font-bold w-full text-sm pb-2 border-b-4 border-solid bg-light  items-center text-purple-500 ">Request(3)</h6>
+                        </div>
+                        
+                        <!--Contacts-->
+                        <div class="contact flex gap-4 mb-4 items-start last:mb-0">
+                            <div class="profile-picture relative overflow-visible h-[2.6rem] w-[2.6rem] ">
+                                <img class="rounded-[50%] h-full w-full object-cover" src="assets/contact1.jpg" alt="" srcset="">
+                                <div class="green-active w-[.8rem] h-[.8rem] bg-green-500 rounded-[50%] absolute bottom-0 right-0"></div>
+                            </div>
+                            <div class="contact-body">
+                                <h5>Jessica</h5>
+                                <p class="text-gray text-xs">
+                                    Hello! I am Jessica. I am a student of CSE.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="contact flex gap-4 mb-4 items-start last:mb-0">
+                            <div class="profile-picture relative overflow-visible h-[2.6rem] w-[2.6rem] ">
+                                <img class="rounded-[50%] h-full w-full object-cover" src="assets/contact2.jpg" alt="" srcset="">
+                                <div class="green-active w-[.8rem] h-[.8rem] bg-green-500 rounded-[50%] absolute bottom-0 right-0"></div>
+                            </div>
+                            <div class="contact-body">
+                                <h5>Anglina</h5>
+                                <p class="text-gray text-xs">
+                                    Hello! I am Anglina. I am a student of CS.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="contact flex gap-4 mb-4 items-start last:mb-0">
+                            <div class="profile-picture relative overflow-visible h-[2.6rem] w-[2.6rem] ">
+                                <img class="rounded-[50%] h-full w-full object-cover" src="assets/contact3.jpg" alt="" srcset="">
+                                <div class="green-active w-[.8rem] h-[.8rem] bg-green-500 rounded-[50%] absolute bottom-0 right-0"></div>
+                            </div>
+                            <div class="contact-body">
+                                <h5>Roymis</h5>
+                                <p class="text-gray text-xs">
+                                    Hello! I am Royis. I am a student of DS.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="contact flex gap-4 mb-4 items-start last:mb-0">
+                            <div class="profile-picture relative overflow-visible h-[2.6rem] w-[2.6rem] ">
+                                <img class="rounded-[50%] h-full w-full object-cover" src="assets/contact4.jpg" alt="" srcset="">
+                                <div class="green-active w-[.8rem] h-[.8rem] bg-green-500 rounded-[50%] absolute bottom-0 right-0"></div>
+                            </div>
+                            <div class="contact-body">
+                                <h5>Brown</h5>
+                                <p class="text-gray text-xs">
+                                    Hello! I am Brown. I am a student of CSE.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="contact flex gap-4 mb-4 items-start last:mb-0">
+                            <div class="profile-picture relative overflow-visible h-[2.6rem] w-[2.6rem] ">
+                                <img class="rounded-[50%] h-full w-full object-cover" src="assets/contact5.jpg" alt="" srcset="">
+                                <div class="green-active w-[.8rem] h-[.8rem] bg-green-500 rounded-[50%] absolute bottom-0 right-0"></div>
+                            </div>
+                            <div class="contact-body">
+                                <h5>Jackie</h5>
+                                <p class="text-gray text-xs">
+                                    Hello! I am Jackie. I am a student of CSE.
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--==========================End Contact=======================-->
+
+                    <!--==========================Start Friend Request=======================-->
+                    <div class="friend-request mt-4 ">
+                        <h4 class=" bg-gray m-4 font-bold">Requests</h4>
+                        <div class="request bg-white p-4 rounded-2xl mb-4 ">
+                            <div class="info flex gap-4 mb-4">
+                                <div class="profile-picture">
+                                    <img src="assets/Request (1).jpg" alt="" srcset="">
+                                </div>
+                                <div>
+                                    <h5>Mark Bush</h5>
+                                    <p class="text-gray">
+                                        2 mutual friends
+                                    </p>
+                                    <small class="text-gray alert hidden">You have accepted friend request</small>
+                                    
+                                </div>
+                            </div>
+                            <div class="action flex gap-4">
+                                <div class="btn btn-primary" id="Accept">
+                                    Accept
+                                </div>
+                                <div class="btn btn-danger bg-red-500 text-white" id="Delete">
+                                    Delete
+                                </div>
+                            </div>
+                        </div>
+                        <div class="request bg-white p-4 rounded-2xl mb-4 ">
+                            <div class="info flex gap-4 mb-4">
+                                <div class="profile-picture">
+                                    <img src="assets/Request (2).jpg" alt="" srcset="">
+                                </div>
+                                <div>
+                                    <h5>Lisa Bull</h5>
+                                    <p class="text-gray">
+                                        1 mutual friends
+                                    </p>
+                                    <small class="text-gray alert hidden">You have accepted friend request</small>
+                                    
+                                </div>
+                            </div>
+                            <div class="action flex gap-4">
+                                <div class="btn btn-primary" id="Accept">
+                                    Accept
+                                </div>
+                                <div class="btn btn-danger bg-red-500 text-white" id="Delete">
+                                    Delete
+                                </div>
+                            </div>
+                        </div>
+                        <div class="request bg-white p-4 rounded-2xl mb-4">
+                            <div class="info flex gap-4 mb-4">
+                                <div class="profile-picture">
+                                    <img src="assets/Request (3).jpg" alt="" srcset="">
+                                </div>
+                                <div>
+                                    <h5>Honey Boy</h5>
+                                    <p class="text-gray">
+                                        9 mutual friends
+                                    </p>
+                                    <small class="text-gray alert hidden">You have accepted friend request</small>
+                                    
+                                </div>
+                            </div>
+                            <div class="action flex gap-4">
+                                <div class="btn btn-primary" id="Accept">
+                                    Accept
+                                </div>
+                                <div class="btn btn-danger bg-red-500 text-white" id="Delete">
+                                    Delete
+                                </div>
+                            </div>
+                        </div>
+                        <div class="request bg-white p-4 rounded-2xl mb-4 ">
+                            <div class="info flex gap-4 mb-4">
+                                <div class="profile-picture">
+                                    <img src="assets/Request (4).jpg" alt="" srcset="">
+                                </div>
+                                <div>
+                                    <h5>Chris Wok</h5>
+                                    <p class="text-gray">
+                                        6 mutual friends
+                                    </p>
+                                    <small class="text-gray alert hidden">You have accepted friend request</small>
+                                    
+                                </div>
+                            </div>
+                            <div class="action flex gap-4">
+                                <div class="btn btn-primary" id="Accept">
+                                    Accept
+                                </div>
+                                <div class="btn btn-danger bg-red-500 text-white" id="Delete">
+                                    Delete
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==========================End Friend Request=======================-->
+                </div>
+                
+            </div>
+
+</main>
+        <!--===========================Main Design End==================-->
+
+
+        <!--===========================Start Popup Area==================-->
+
+        <!--===========================Start Profile Popup ==================-->
+            <div class="popup profile-popup w-full h-full hidden  items-center fixed top-0 justify-center z-10  bg-slate-800 bg-opacity-40">
+                <div class="flex ">
+                    <div class="popup-box profile-popup-box w-[400px] h-[460px] bg-white p-4 rounded-2xl justify-center items-center text-center flex flex-col">
+                        <div id="my-profile-picture" class=" h-40 w-40 rounded-[50%] overflow-hidden mt-10">
+                            <img src="" alt="" srcset="">
+                        </div>
+                        <h1 class="font-bold leading-7"></h1>
+                        <p></p>
+                        
+                        
+                        <label for="profile-upload" class="btn btn-primary btn-lg" >Update Profile Picture</label>
+                        <input type="file" accept="image/jpg, image/png, image/jpeg " id="profile-upload" class="hidden">
+                        <a href="timeline.html" class="btn btn-primary btn-lg w-52 mt-4">Timeline</a>
+                        <a href="index.html" id="logoutButton" class="btn btn-primary btn-lg w-52 mt-4">Log Out</a>
+                        
+                    </div>
+                    <span class="close text-2xl cursor-pointer bg-transparent -ml-4 -mt-3 "><i class="fa-regular fa-circle-xmark  bg-white hover:bg-red-600 rounded-full"></i></span>
+                </div>
+                
+            </div>
+
+            <!--===========================End Profile Popup ==================-->
+
+            <!--===========================Start Add Post  ==================-->
+            <div class="popup add-post-popup hidden w-full h-full items-center fixed top-0 justify-center z-10 bg-slate-800 bg-opacity-40 ">
+                <div class="flex">
+                    <form class="popup-box add-post-popup w-[400px] h-[460px] bg-white p-4 rounded-2xl justify-center items-center text-center flex flex-col gap-4">
+                        <h1 class="text-xl"><b>Add New Post</b></h1>
+                        <div class="row post-title flex flex-col gap-8 w-72">
+                            <label  class="text-2xl font-semibold ">Title</label>
+                            <input type="text" class="text-base text-center border border-solid bg-slate-300 h-10 rounded-xl focus:outline-none focus:ring focus:ring-violet-300 " id="add-post" placeholder="What's Happening?">
+                        </div>
+
+                        <div class="row post-img flex flex-col gap-2 ">
+                            
+                                <img src="" alt="" srcset="" class="w-24 m-auto " id="postIMg">
+                            
+                            
+                            <label for="feed-picture-upload" class="feed-upload-button cursor-pointer p-4 border-2 border-dashed border-black font-bold " >
+                                <span><i class="fa-solid fa-camera"></i> </span> Upload A Picture
+                            </label>
+                            <input type="file" accept="image/jpg, image/png, image/jpeg " id="feed-picture-upload" class=" hidden ">
+                           <input type="submit" class="btn btn-primary btn-lg w-52 mt-4" value="Add Post">
+                        </div>
+                                     
+                    </form>
+                    <span class="close text-2xl cursor-pointer -ml-4 -mt-3 "><i class="fa-regular fa-circle-xmark bg-white hover:bg-red-600 rounded-full "></i></span>
+                </div>
+            </div>
+
+
+
+            <!--===========================End Add Post ==================-->
+
+            <!--===========================Start Theme Customization==========-->
+
+            <div class="popup theme-customize w-full h-full hidden items-center fixed top-0 justify-center z-10  bg-slate-800 bg-opacity-40  ">
+                <div>
+                    <div class="popup-box theme-customize-popup-box w-[400px] h-[460px] bg-white p-4 rounded-2xl justify-center items-center text-center flex flex-col">
+                        <div class="mt-10">
+                        <h1 class="text-2xl font-bold  ">Customize Your Theme</h1>
+                        <p >Manage font, color and background</p>
+                        </div>
+                                <!--Font Size-->
+                                <div class="font-size mt-2  ">
+                                    <h4 class="text-xl font-bold mb-4">Font Size</h4>
+                                    <div class="flex p-search rounded-2xl justify-between items-center bg-slate-300 m-8 my-0 ">
+                                        <div >
+                                            <h6 class="text-sm font-medium ml-3 ">Aa</h6>
+                                        </div>
+                                        <div class="choose-size h-12 w-[100%] flex justify-between bg-secondary items-center mx-4 gap-12">
+                                            <span class="font-size-1  w-4 h-4 bg-slate-400 cursor-pointer rounded-[50%]"></span>
+                                            <span class="font-size-2 active w-4 h-4 bg-purple-500 cursor-pointer rounded-[50%]"></span>
+                                            <span class="font-size-3 w-4 h-4 bg-slate-400 cursor-pointer rounded-[50%]"></span>
+                                            <span class="font-size-4 w-4 h-4 bg-slate-400 cursor-pointer rounded-[50%]"></span>
+                                            <span class="font-size-5 w-4 h-4 bg-slate-400 cursor-pointer rounded-[50%]"></span>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold mr-3">Aa</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!--Primary Colors-->
+                                    <div class="colors">
+                                        <h4 class="text-xl font-bold mt-4">Color</h4>
+                                        <div class="choose-color m-4 justify-between bg-slate-300 rounded-2xl p-search  items-center" >
+                                            <span class="color-1 active h-[2.2rem] w-[2.2rem] rounded-[50%] inline-block m-2 border-4 border-solid border-slate-700"></span>
+                                            <span class="color-2  h-[2.2rem] w-[2.2rem] rounded-[50%] inline-block m-2"></span>
+                                            <span class="color-3  h-[2.2rem] w-[2.2rem] rounded-[50%] inline-block m-2"></span>
+                                            <span class="color-4  h-[2.2rem] w-[2.2rem] rounded-[50%] inline-block m-2"></span>
+                                            <span class="color-5  h-[2.2rem] w-[2.2rem] rounded-[50%] inline-block m-2"></span>
+
+                                        </div>
+                                    </div>
+                                    <!--Background Colors-->
+                                    <div class="background mb-4">
+                                        <h4 class="text-xl font-bold">Background</h4>
+                                        <div class="choose-background flex items-center justify-between gap-6 mt-4">
+                                            <div class="bg1 active flex w-[100%] p-4 items-center text-base font-bold rounded-[.4rem] cursor-pointer  border-2 border-solid border-purple-500">
+                                                <span class="h-6 w-6 rounded-[50%] border-2 border-solid border-slate-500 mr-2"></span>
+                                                <h5 class="font-bold">Light</h5>
+                                            </div>
+                                            <div class="bg2 flex w-[100%] p-4 items-center text-base font-bold rounded-[.4rem] cursor-pointer">
+                                                <span class="h-6 w-6 rounded-[50%] border-2 border-solid border-slate-500 mr-2"></span>
+                                                <h5 class="font-bold">Dark</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+
+            <!--===========================End Theme Customization==========-->
+        <!--=========================== End Popup Area ==================-->
+        
+
+            
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+        <script src="login.js"></script>
+        <script src="loader.js"></script>
+        <script src="navbarAddPostButton.js"></script>
+        <script src="addStory.js"></script>
+        <script src="scrollHandler.js"></script>
+        <script src="sidebarHandler.js"></script>
+        <script src="chatHandler.js"></script>
+        <script src="notificationHandler.js"></script>
+        <script src="themeHandler.js"></script>
+        <script src="friendRequest.js"></script>
+        <script src="profilePopup.js"></script>
+        <script src="addPost.js"></script>
+        <script src="likeCommentpostButtons.js"></script>
+        
+        
+        
+       
+    </body>
+</html>

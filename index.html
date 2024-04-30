@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="assets/logo-picture01.PNG" type="" class=" rounded-full">
+    <title>ChatWave Login</title>
+</head>
+<body>
+
+
+    <div class="container relative w-[750px] h-[450px] border-2 border-solid md:w-[750px]   ">
+        <div class="curved-shape">
+
+        </div>
+        <div class="curved-shape2">
+
+        </div>
+        <!--==============================Login Start==============================-->
+        <div class="form-box Login text-white  absolute top-0 w-[50%] h-full flex justify-center flex-col left-0 py-0 px-10  md:w-[50%]">
+            <h2 class="login text-3xl font-bold animation">Login</h2>
+            <form  id="loginForm">
+                <div class="input-box animation relative w-full h-[50px] mt-6">
+                    <input id="username" class="w-full h-full bg-transparent border-b-4 border-solid border-slate-300 outline-none  " type="text" required >
+                    <label for="username" 
+                    class=" absolute top-[50%] left-0 translate-y-[-50%] text-base  transition-transform duration-500" >
+                    Username</label>
+                    <i class="fa-solid fa-user absolute top-0/4 right-0 text-lg translate-y-1/2 transition-transform duration-500"></i>
+                </div>
+
+                <div class="input-box animation relative w-full h-[50px] mt-6 ">
+                    <input id="password" class=" w-full h-full bg-transparent border-b-4 border-solid border-slate-300 outline-none " type="text" required >
+                    <label for="password" class="absolute top-[50%] left-0 translate-y-[-50%] text-base  transition-transform duration-500">Password</label>
+                    <i class="fa-solid fa-lock  absolute top-0/4 right-0 text-lg translate-y-1/2  transition-transform duration-500"></i>
+                </div>
+                <div class="input-box animation relative w-full h-[50px] mt-6 ">
+                    <button class="btn relative w-full h-11 bg-transparent rounded-2xl cursor-pointer text-base font-semibold"
+                     type="submit"  id="submit" >Login</button>
+                </div>
+                <div class="registration-link animation text-sm items-center mt-5 mb-[10px]  ">
+                    <p>Don't have an account? <a href="#" class="no-underline  font-semibold hover:underline">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+        <!--==============================Login End==============================-->
+        
+        
+        <!--=============================Welcome Message Start===================-->
+        <div 
+        class="info-content  forLogin text-white absolute top-0 h-full
+         w-1/2 flex justify-center flex-col right-0 text-right px-10 py-[60px] pl-[150px]">
+            <h2 class="welcome animation text-3xl font-bold uppercase  ">Welcome Back!</h2>
+            <p class="text-base animation">Please Login to get access</p>
+        </div>
+        <!--=============================Welcome Message End===================-->
+
+    </div>
+
+    <script src="login.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>

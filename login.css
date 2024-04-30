@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25252b;
+    text-align: center;
+}
+/*================= Login Container Styling============ */
+
+.container{
+    border: #ff2770;
+    box-shadow: 0 0 25px #ff2770; 
+   overflow: hidden; 
+}
+
+/* ================ Curved the Div for styling Start ================ */
+
+.curved-shape{
+    position: absolute;
+    right: 0;
+    top: -0.313rem;
+    height: 37.5rem;
+    width: 53.125rem;
+    background: linear-gradient(45deg, #25252b, #ff2770);
+   /* transform: rotate(10deg) skewY(40deg); */
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+
+}
+.container.active .curved-shape{
+    transform: rotate(0deg) skewY(0deg);
+    
+}
+
+
+.curved-shape2{
+    position: absolute;
+    left: 15.265rem;
+    top: 100%;
+    height: 43.75rem;
+    width: 53.125rem;
+    background: #25252b;
+    border-top: 3px solid #ff2770;
+    transform: rotate(0deg) skewY(0deg);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+
+}
+.container.active .curved-shape2{
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
+}
+
+.animation{
+    transform: translateX(0%);
+    
+}
+.container.active .animation{
+    transform: translateX(-120%);
+     
+}
+
+.container.active .info-content .animation{
+    transform: translateX(0%);
+    opacity: 0;
+     
+}
+
+
+
+
+
+/* ================ Curved the Div for styling End ================ */
+
+
+/*============== Login Input field & icon Styling ========================= */
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom: 2px solid #ff2770;
+}
+.input-box input:focus ~label,
+.input-box input:valid ~label{
+    top: -5px;
+    color: #ff2770;
+}
+
+.input-box input:focus ~i,
+.input-box input:valid ~i{
+    
+    color: #ff2770;
+}
+
+/*=============Login Button Styling ================ */
+
+.btn{
+    border: 2px solid #ff2770;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#25252b, #ff2770, #25252b);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+.btn:hover::before{
+    top: 0;
+}
+
+/*=============Login Button Styling End ================ */
+
+
+/*=============Signup anchor tag styling ================ */
+.signupLink{
+    color: #ff2770;
+}
+
+  
+
+
+/*=================media query==============*/
+
+@media  screen and (max-width:768px){
+    
+    .container{
+        width: 85% !important; 
+
+    }
+
+
+    .container .form-box{
+        width: 50% !important;
+        margin-left: 20% !important;
+        
+    }
+    form .input-box{
+        width: 130% !important;
+        
+    }
+
+    .info-content{
+        display: none !important;
+    }
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/logo-picture01.PNG" type="" class=" rounded-full">
+<title>Timeline</title>
+<link rel="stylesheet" href="timeline.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+<header class="bg-blue-500 py-4">
+    <!--==================================Navbar Design Start=============================-->
+  <nav class="bg-white w-full fixed top-0 z-10 py-2">
+      <div class="container mx-auto flex justify-between items-center">
+          <div class="logo">
+            <a href="main.html">
+              <h3 class="text-2xl font-semibold uppercase">Chat <span class="text-red-500">Wave</span></h3>
+            </a>
+          </div>
+
+          <div class="flex-grow flex justify-center">
+              <div class="search-bar flex items-center bg-slate-300 h-12 rounded-full px-4">
+                  <i class="fas fa-search text-gray-600 "></i>
+                  <input type="search" placeholder="Search ChatWave" class="w-80 text-sm text-dark placeholder-gray-500 focus:outline-none bg-transparent">   
+              </div>
+              <button id="darkModeToggle"><i id="darkModeIcon" class="fa-solid fa-toggle-on text-xl"></i></button>
+          </div>
+      </div>
+  </nav>
+<!--==================================Navbar Design End=============================-->
+</header>
+
+<!---===========================Timeline Cover Start=========================================-->
+
+<div class="timeline-cover relative h-80 overflow-hidden">
+  
+  <div class="absolute inset-0 flex items-center justify-center flex-col text-center">
+  
+      <div class="relative rounded-full overflow-hidden  object-cover border-2 border-white transition-transform transform hover:scale-150">
+         <img src="" alt="Profile Picture" class="w-16 h-16 object-cover">
+            <!--Picture shows dynamically-->
+      </div>
+    
+    <!-- Name -->
+    <h2 id="usernameHeading1" class="text-black font-semibold text-3xl mt-4 animate-slide-down transition-colors hover:text-red-500">
+      <!--Name Shows Dynamicallly-->
+    </h2>
+    
+    <!-- Button Container -->
+    <div class="flex flex-col items-center mt-4">
+          <!-- Friend Button -->
+          <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full flex items-center transition-all transform hover:-translate-y-0.5 mb-2">
+            <a href="main.html">  
+              <span class="mr-2">Home</span>
+                <i class="fa-solid fa-house-user"></i>
+            </a>
+          </button>
+    </div>
+  </div>
+</div>      
+  
+
+
+
+  <!-- Main Content -->
+<main class=" main-content max-w-4xl mx-auto py-8 flex gap-4">
+    <!-- Left Side Cards -->
+    
+<div class="w-2/4">
+      <!-- Intro/Bio Card -->
+        <div  class="intro-card bg-white rounded-lg shadow-md p-4 mb-4 relative">
+            <h3 class="font-semibold text-lg mb-2">Intro</h3>
+            <p class="text-gray-600 text-sm text-center">I am Software Engineer</p>
+        
+          <!-- Edit Bio Button with Hover Effect -->
+            <div class="mt-2">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded w-full hover:bg-blue-600 transition-colors duration-300">Edit Bio</button>
+            </div>
+
+            <p class="text-gray-600 text-sm mt-2 mb-2"><i class="fas fa-building text-gray-500"></i> Works at Fiverr </p>
+            <p class="text-gray-600 text-sm mb-2"><i class="fas fa-user-friends text-gray-500"></i> Followed by 20 people</p>
+          
+            <!-- Edit Details and Add Featured Buttons -->
+            <div class="flex flex-col mt-4">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded mb-2 hover:bg-blue-600 transition-colors duration-300">Edit Details</button>
+                <button class="bg-blue-500 text-white px-2 py-1 rounded mb-2 hover:bg-blue-600 transition-colors duration-300">Add Featured</button>
+            </div>
+        </div>
+    
+
+    
+        <!-- Dummy Images Card -->
+        <div class="profile-image-card bg-white rounded-lg shadow-md p-4 mb-4">
+          <h3 class="font-semibold text-lg mb-2">Photos</h3>
+          <div class="grid grid-cols-2 gap-2">
+              <img src="assets/timelinepic (1).jpg" alt="Dummy Image 1" class="w-full h-24 object-cover rounded-lg">
+              <img src="assets/timelinepic (2).jpg" alt="Dummy Image 2" class="w-full h-24 object-cover rounded-lg">
+              <img src="assets/timelinepic (3).jpg" alt="Dummy Image 3" class="w-full h-24 object-cover rounded-lg">
+              <img src="assets/timelinepic (4).jpg" alt="Dummy Image 4" class="w-full h-24 object-cover rounded-lg">
+              <img src="assets/timelinepic (5).jpg" alt="Dummy Image 4" class="w-full h-24 object-cover rounded-lg">
+              <img src="assets/timelinepic (6).jpg" alt="Dummy Image 4" class="w-full h-24 object-cover rounded-lg">
+          </div>
+       </div>
+       
+       <!-- Dummy Friends Card -->
+       <div class="friends-card bg-white rounded-lg shadow-md p-4 mb-4 ">
+          <h3 class="font-semibold text-lg mb-2">Friends</h3>
+          <div class="grid grid-cols-3 gap-4 ">
+            <div class="flex items-center justify-center flex-col">
+                <img src="assets/friends (1).jpg" alt="Dummy Friend 1" class="w-20 h-20 rounded-2xl mb-2">
+                <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">Jane Doe</span>
+            </div>
+            
+            <div class="flex items-center justify-center flex-col">
+                <img src="assets/friends (2).jpg" alt="Dummy Friend 2" class="w-20 h-20 rounded-2xl mb-2 object-cover">
+                <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">John Smith</span>
+            </div>
+
+            <div class="flex items-center justify-center flex-col">
+                <img src="assets/friends (3).jpg" alt="Dummy Friend 3" class="w-20 h-20 rounded-2xl mb-2 object-cover">
+                <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">Alice Johnson</span>
+            </div>
+
+          <div class="flex items-center justify-center flex-col">
+              <img src="assets/notification1.jpg" alt="Dummy Friend 4" class="w-20 h-20 rounded-2xl mb-2 object-cover">
+              <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">Bob Anderson</span>
+          </div>
+
+          <div class="flex items-center justify-center flex-col">
+              <img src="assets/contact3.jpg" alt="Dummy Friend 5" class="w-20 h-20 rounded-2xl mb-2 object-cover">
+              <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">Emma Wilson</span>
+          </div>
+
+          <div class="flex items-center justify-center flex-col">
+              <img src="assets/notification3.jpg" alt="Dummy Friend 6" class="w-20 h-20 rounded-2xl mb-2 object-cover">
+              <span class="font-semibold overflow-hidden whitespace-nowrap text-ellipsis">Chris Brown</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Main Timeline Content -->
+    <div class="main-timeline-content w-3/4 overflow-y-auto">
+        <!-- Dummy Posts -->
+    <div class="post-card bg-white rounded-lg shadow-md p-4 mb-4">
+        <div class="flex items-start mb-4">
+            <img src="assets/profile-picture3.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full object-cover">
+          
+            <div class="ml-4">
+              <h2 class="username  font-semibold text-lg">John Doe</h2>
+              <p class="text-gray-500 text-sm">Posted on June 1, 2024</p>
+            </div>
+        </div>
+
+          <div class="mb-4">
+            <p class="text-gray-800">This is a sample post content. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <img src="assets/timelinepost.jpg" alt="Post Image" class="mt-2 rounded-lg">
+          </div>
+
+        <!--Liked Icons-->
+        <div class="action-button flex items-center justify-between text-lg my-4 select-none">
+            <div class="interaction-button">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <span><i class="fa-regular fa-comment"></i></span>
+                <span><i class="fa-solid fa-share-nodes"></i></span>
+            </div>
+
+            <div class="bookmark ">
+                <i class="fa-regular fa-bookmark font-normal"></i>
+            </div>
+        </div>
+
+        
+        <!--Liked Icons-->
+        <div class=" mt-4">
+          <div class="flex items-start mb-2">
+            <img src="assets/contact1.jpg" alt="Commenter Profile Picture" class="w-8 h-8 rounded-full">
+            <div class="ml-2">
+              <h3 class="font-semibold">Jane Smith</h3>
+              <p class="text-gray-600">Great post!</p>
+            </div>
+          </div>
+          <!-- More comments -->
+        </div>
+      </div>
+      <div class="post-card bg-white rounded-lg shadow-md p-4 mb-4">
+        <div class="flex items-start mb-4">
+          <img src="assets/profile-picture3.jpg"  alt="Profile Picture" class="img01 w-12 h-12 rounded-full object-cover">
+          <div class="ml-4">
+            <h2 class="font-semibold text-lg username01 ">John Doe</h2>
+            <p class="text-gray-500 text-sm">Posted on Jan 21, 2023</p>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-800">This is a sample post content. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <img src="assets/timeline (3).jpg" alt="Post Image" class="mt-2 rounded-lg">
+        </div>
+        <!--Liked Icons-->
+        <div class="action-button flex items-center justify-between text-lg my-4 select-none">
+            <div class="interaction-button">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <span><i class="fa-regular fa-comment"></i></span>
+                <span><i class="fa-solid fa-share-nodes"></i></span>
+            </div>
+            <div class="bookmark ">
+                <i class="fa-regular fa-bookmark font-normal"></i>
+
+            </div>
+        </div>
+        <!--Liked Icons-->
+        <div class="mt-4">
+          <div class="flex items-start mb-2">
+            <img src="assets/contact2.jpg" alt="Commenter Profile Picture" class="w-8 h-8 rounded-full">
+            <div class="ml-2">
+              <h3 class="font-semibold">Jimmy</h3>
+              <p class="text-gray-600">Great</p>
+            </div>
+          </div>
+          <!-- More comments -->
+        </div>
+      </div>
+      <div class="post-card bg-white rounded-lg shadow-md p-4 mb-4">
+        <div class="flex items-start mb-4">
+          <img src="assets/profile-picture3.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full object-cover">
+          <div class="ml-4">
+            <h2 class="font-semibold text-lg">John Doe</h2>
+            <p class="text-gray-500 text-sm">Posted on April 12, 2022</p>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-800">This is a sample post content. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <img src="assets/timeline (4).jpg" alt="Post Image" class="mt-2 rounded-lg">
+        </div>
+        <!--Liked Icons-->
+        <div class="action-button flex items-center justify-between text-lg my-4 select-none">
+            <div class="interaction-button">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <span><i class="fa-regular fa-comment"></i></span>
+                <span><i class="fa-solid fa-share-nodes"></i></span>
+            </div>
+            <div class="bookmark ">
+                <i class="fa-regular fa-bookmark font-normal"></i>
+
+            </div>
+        </div>
+        <!--Liked Icons-->
+        <div class="mt-4">
+          <div class="flex items-start mb-2">
+            <img src="assets/contact1.jpg" alt="Commenter Profile Picture" class="w-8 h-8 rounded-full">
+            <div class="ml-2">
+              <h3 class="font-semibold">Saleena</h3>
+              <p class="text-gray-600">Good!</p>
+            </div>
+          </div>
+          <!-- More comments -->
+        </div>
+      </div>
+      <div class="post-card bg-white rounded-lg shadow-md p-4 mb-4">
+        <div class="flex items-start mb-4">
+          <img src="assets/profile-picture3.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full object-cover">
+          <div class="ml-4">
+            <h2 class="font-semibold text-lg">John Doe</h2>
+            <p class="text-gray-500 text-sm">Posted on June 1, 2024</p>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-800">This is a sample post content. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <img src="assets/timeline (5).jpg" alt="Post Image" class="mt-2 rounded-lg">
+        </div>
+            <!--Liked Icons-->
+            <div class="action-button flex items-center justify-between text-lg my-4 select-none">
+                <div class="interaction-button">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-regular fa-comment"></i></span>
+                    <span><i class="fa-solid fa-share-nodes"></i></span>
+                </div>
+                <div class="bookmark ">
+                    <i class="fa-regular fa-bookmark font-normal"></i>
+
+                </div>
+            </div>
+            <!--Liked Icons-->
+        <div class="mt-4">
+          <div class="flex items-start mb-2">
+            <img src="assets/contact5.jpg" alt="Commenter Profile Picture" class="w-8 h-8 rounded-full">
+            <div class="ml-2">
+              <h3 class="font-semibold">Jane Smith</h3>
+              <p class="text-gray-600">Great post!</p>
+            </div>
+          </div>
+          <!-- More comments -->
+        </div>
+      </div>
+      <!-- More posts -->
+    </div>
+  </main>
+  <script src="timeline.js"></script>
+</body>
+</html>
