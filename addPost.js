@@ -78,8 +78,10 @@ class ProfileManager {
   }
 
   fetchUserData() {
-    const userName =JSON.parse( localStorage.getItem("user"))
     const userId =localStorage.getItem('id');
+    const userName =JSON.parse( localStorage.getItem("user"))
+    console.log(userName.username)
+    console.log(userName.image)
     fetch(`https://dummyjson.com/users/${userId}`)
       .then(res => res.json())
       .then(data => this.updateProfilePicture(data))

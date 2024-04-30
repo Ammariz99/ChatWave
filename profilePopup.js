@@ -65,33 +65,31 @@ class ProfilePictureHandler {
             this.userProfilePicture = document.getElementById('my-profile-picture').querySelector('img');
             this.fetchProfilePicture();
         }
-  
+
         async fetchProfilePicture() {
             try {
-              const userId =localStorage.getItem('id');
-              const userName =JSON.parse( localStorage.getItem("user"))
-              console.log(userName.username)
-              console.log(userName.image)
-                const response = await fetch(`https://dummyjson.com/users/${userId}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                const userData = JSON.parse(localStorage.getItem('user'));
+                if (!userData) {
+                    throw new Error('User data not found in localStorage');
                 }
-                const user = await response.json();
-                this.updateProfilePicture(user);
+                const { username, image } = userData;
+                console.log('Username:', username);
+                console.log('Profile Picture:', image);
+                this.updateProfilePicture(image);
             } catch (error) {
                 console.error('Error fetching profile picture:', error);
             }
         }
-  
-        updateProfilePicture(user) {
-          const userName =JSON.parse( localStorage.getItem("user"))
-            this.userProfilePicture.src = userName.image;
-            this.userProfilePicture.alt = userName.username + "'s Profile Picture";
+
+        updateProfilePicture(imageUrl) {
+            this.userProfilePicture.src = imageUrl;
+            this.userProfilePicture.alt = 'Profile Picture';
         }
     }
-  
+
     const profilePictureHandler = new ProfilePictureHandler();
-  });
+});
+
   /*this code handle the profile picture in navbar end*/
   
   
