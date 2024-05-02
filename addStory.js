@@ -2,7 +2,7 @@
 
 class MySwiper {
     constructor(selector) {
-      this.swiper = new swiper(selector, {
+      this.swiper = new Swiper(selector, {
         slidesPerView: 6,
         spaceBetween: 5,
       });
